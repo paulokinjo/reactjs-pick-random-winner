@@ -1,3 +1,36 @@
+# Firebase 
+
+## Requirements
+> Authentication > Sign-in method: Activate Anonymous provider
+
+## Environment
+> Configure a <code>.env</code> file with the following environment variables
+
+```
+REACT_APP_APIKEY=<YOUR-KEY>
+REACT_APP_AUTHDOMAIN=<YOUR-AUTHDOMAIN>
+REACT_APP_PROJECTID=<YOUR-PROJECTID>
+REACT_APP_STORAGEBUCKET=<YOUR-STORAGEBUCKET>
+REACT_APP_MESSAGINSENDERID=<YOUR-MESSAGINSENDERID>
+REACT_APP_APPID=<YOUR-APPID>
+```
+
+## Exception
+<b>Not a good practice<b>
+
+For this project please just enable the <code>Cloud Firestore</code> rules as follows:
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
+```
+  
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
