@@ -1,0 +1,109 @@
+.cards {
+  display: grid;
+  grid-template: repeat(7, 1fr) / repeat(7, 1fr);
+  gap: 10px;
+}
+
+.contest-card {
+  height: 150px;
+  width: 150px;
+  border-radius: 2px;
+  background: #000;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.contest-card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.6s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+}
+
+.contest-card .front,
+.contest-card .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.contest-card .front {
+  display: block;
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+.contest-card .front button,
+.contest-card .front input {
+  margin-top: 20px;
+}
+
+.contest-card .front button {
+  margin-left: 35px;
+}
+
+.contest-card .back {
+  background: #000000;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.3s ease all;
+}
+
+.contest-card .winner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.contest-card .winner {
+  background: #3af800;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.3s ease all;
+}
+
+.contest-card .back:hover {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  transform: scale(1.02);
+}
+
+.delete:hover {
+  display: block;
+}
+
+.btn-reset {
+  margin-left: 15px;
+}
+
+.btn-signout {
+  float: right;
+}
+
+.input-addname {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
